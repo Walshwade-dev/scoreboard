@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreBoard</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/chevron-double-down-o.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="flex w-full h-[100vh] pt-20 justify-center text-[#fff]  text-center">
+    <div>
+        <h1 class="font-bold">
+            <span id="greetings"></span>, Master
+        </h1>
+        <h3>Welcome to the Game</h3>
+        <div>
+            <label for="game-choice"> Choose your game:</label>
+            <div class="flex items-center select-container">
+                <div class="select-ctn">
+                    <select id="game-choice" name="games" class="select-box">
+                        <option id="football-opt" value="football">Football</option>
+                        <option id="rugby-opt" value="rugby">Rugby</option>
+                        <option id="basketball-opt" value="basketball">Basketball</option>
+                    </select>
+                </div>
+                <div class="icon-container ">
+                    <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="inherit"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            d="M7.75732 8.46448L9.17154 7.05026L12 9.87869L14.8284 7.05029L16.2426 8.46451L12 12.7071L7.75732 8.46448Z"
+                            fill="currentColor"
+                        />
+                        <path
+                            d="M9.17154 11.2929L7.75732 12.7071L11.9999 16.9498L16.2426 12.7071L14.8284 11.2929L12 14.1213L9.17154 11.2929Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- ====> football score board <==== start -->
+        <div id="football-board" class="foot-score-board mt-20">
+            <div>Competation Name</div>
+            <div>
+
+                <div class="vs-container relative z-40 mt-4 flex items-center h-9 w-72 mx-auto text-center">
+                    <div id="home-team-name" class="flex uppercase font-semibold text-[1rem] justify-between items-center  bg-red-500 h-8 w-40 px-1 rounded-tl-2xl rounded-bl-2xl">Home Team</div>
+                    <div id="vs-el" class="absolute left-[7.1rem] -top-[0.34rem] bg-orange-400 h-10 w-12 rounded-bl-3xl rounded-br-3xl px-2 overflow-hidden">
+                        <div id="inner-vs-el" class="flex justify-center items-center h-10 w-10 ml-[2px] -mt-2 rounded-bl-3xl rounded-br-3xl uppercase font-bold">VS</div>
+                    </div>
+                    <div id="away-team-name" class="flex uppercase font-semibold text-[1rem] justify-center items-center  bg-blue-500 h-8 w-40 px-1 rounded-tr-2xl rounded-br-2xl">Away Team</div>
+                </div>
+
+                <div class="glassy-background flex flex-col justify-center items-center relative z-30 w-[17.5rem] h-72 mx-auto bg-[#00000033] rounded-lg ">
+                    <div class="score-display-container w-[16.5rem] h-[12rem] flex flex-col items-center justify-center">
+                        <div class="flex items-center justify-center gap-10">
+                            <div class="home-team-score w-20 h-20 flex justify-center items-center text-[5rem] ">00</div>
+                            <div class="away-team-score w-20 h-20 flex items-center justify-center text-[5rem] ">00</div>
+                        </div>
+                        <div class="uppercase absolute bottom-0 font-semibold drop-shadow-lg">Time</div>
+                    </div>
+
+                    <div class="time-lapse-container w-[16.5rem] h-[3rem] flex justify-around items-center gap-10 mt-4">
+                        <div class="home-tag absolute z-50 left-5 font-semibold text-[1rem]">Home</div>
+                        <div id="time-el"></div>
+                        <div class="away-tag absolute right-5 font-semibold text-[1rem]">Away</div>
+                        <div class="time-line"></div>
+                        <div class="time-lapse">
+                        </div>
+                        <div class="time-lapse-border"></div>
+                    </div>
+                    <span id="timer">00:00</span>
+                </div>
+                
+            </div>
+
+            </div>
+        </div>
+
+        <!-- ====> football score board <==== end -->
+
+    </div>
+</body>
+
+<script src="index.js"></script>
+</html>

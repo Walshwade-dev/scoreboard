@@ -1,0 +1,35 @@
+A score board
+
+create 3 optiions
+1. football
+    Game title
+    playing teams 2
+    home team and away team
+    display board => goals
+    buttons to add goals
+    show the leading team
+2. rugby
+    try => 5points
+    conversion => 2points
+    penalty kick => 3points
+    dropball => 3points
+    penalty try => 7points
+    Rugby score board
+        Team Names
+        scores
+        below, smaller indicatores
+            - tries
+            - conversions
+            - penalty goals
+            - drop goals
+        remaining time;
+        match statistics
+
+3. basketball
+    team Names
+    current quarter
+    team scores
+    remaining time
+    team fouls
+    Timeouts remaining
+
