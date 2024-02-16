@@ -1,6 +1,6 @@
 @font-face {
     font-family: myDigitalFont;
-    src: url(/src/fonts/lcd-att-phone-timedate_woff/LCDAT&TPhoneTimeDate.woff);
+    src: url(/fonts/lcd-att-phone-timedate_woff/LCDAT&TPhoneTimeDate.woff);
 }
 
 
@@ -11,7 +11,7 @@
 }
 
 body {
-    background: linear-gradient(rgba(79, 202, 240, 0.986), rgba(253, 90, 118, 0.849)), url('/src/images/trophybkg.jpg');
+    background: linear-gradient(rgba(79, 202, 240, 0.986), rgba(253, 90, 118, 0.849)), url('/images/trophybkg.jpg');
     width: 100%;
     height: 120vh;
     overflow: hidden;
