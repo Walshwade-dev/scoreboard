@@ -11,7 +11,7 @@
 }
 
 body {
-    background: linear-gradient(rgba(79, 202, 240, 0.986), rgba(253, 90, 118, 0.849)), url('/images/trophybkg.jpg');
+    background: linear-gradient(#4fcaf0fb, #faf9f9a1, #e75e75bb, #ffffffad, #008000c5), url('/images/trophybkg.jpg');
     width: 100%;
     height: 120vh;
     overflow: hidden;
@@ -49,13 +49,59 @@ body {
 }
 
 .select-box:focus {
-    background-color: #38cefcee;
+    background-color: #94d2bd;
     color: black;
 }
 
-option:focus{
-    color: black;
+.option:focus {
+    background-color: blueviolet;
 }
+
+.league-name-el {
+    position: relative;
+    background: linear-gradient(to right, #b61203a1, #e4393ed2, #b61203a1 );
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+}
+
+.league-end-el {
+    position: relative;
+    background: linear-gradient(to right, #b61203a1, #e4393ed2, #b61203a1 );
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+.league-name-el::before {
+    position: absolute;
+    content: '';
+    background: linear-gradient(grey, white, darkgrey, black, grey, black, grey, white);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3rem;
+    margin: -8px;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    z-index: -1;
+}
+
+.league-end-el::before {
+    position: absolute;
+    content: '';
+    background: linear-gradient(grey, white, darkgrey, black, grey, black, grey, white);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3rem;
+    margin: -8px;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    z-index: -1;
+}
+
+
 
 .vs-container {
     background: radial-gradient(circle at 100% 100%, rgba(48,48,48,0) 0, rgba(48,48,48,0) 24px, transparent 24px) 0% 0%/30px 30px no-repeat,

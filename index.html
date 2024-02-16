@@ -10,15 +10,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body class="flex w-full h-[100vh] pt-20 justify-center text-[#fff]  text-center">
+<body class="flex flex-col w-full h-[100vh] pt-20 justify-center text-[#fff]  text-center">
     <div>
-        <h1 class="font-bold">
+        <h1 class="font-bold text-[1.5rem] text-[#9b2226]">
             <span id="greetings"></span>, Master
         </h1>
-        <h3>Welcome to the Game</h3>
+        <h3 class="text-[#9b2226]">Welcome to the Game</h3>
         <div>
-            <label for="game-choice"> Choose your game:</label>
-            <div class="flex items-center select-container">
+            <label for="game-choice" class="text-[#00bbf9]"> Choose your game:</label>
+            <div class="relative items-center  max-w-[7rem] mx-auto bg-[#0a9396] mt-2">
                 <div class="select-ctn">
                     <select id="game-choice" name="games" class="select-box">
                         <option id="football-opt" value="football">Football</option>
@@ -26,7 +26,7 @@
                         <option id="basketball-opt" value="basketball">Basketball</option>
                     </select>
                 </div>
-                <div class="icon-container ">
+                <div class="icon-container absolute top-0">
                     <svg
                         width="28"
                         height="28"
@@ -50,8 +50,8 @@
 
 
         <!-- ====> football score board <==== start -->
-        <div id="football-board" class="foot-score-board mt-20 mb-10">
-            <div>Competation Name</div>
+        <div id="football-board" class="foot-score-board mt-10 mb-10">
+            <div class="league-name-el flex items-center justify-center max-w-[20%] h-[2rem] mx-auto -mb-4 text-[1rem] font-bold text-[#e9d8a6]">Soccer League</div>
             <div>
 
                 <div class="vs-container relative z-40 mt-4 flex items-center h-9 w-72 mx-auto text-center">
@@ -62,7 +62,7 @@
                     <div id="away-team-name" class="flex uppercase font-semibold text-[1rem] justify-center items-center  bg-blue-500 h-8 w-40 px-1 rounded-tr-2xl rounded-br-2xl">Away Team</div>
                 </div>
 
-                <div class="glassy-background flex flex-col justify-center items-center relative z-30 w-[17.5rem] h-72 mx-auto bg-[#00000033] rounded-lg ">
+                <div class="glassy-background flex flex-col justify-center items-center relative z-30 w-[17.5rem] h-72 mx-auto -mt-2 bg-[#00000033] rounded-lg ">
                     <div class="score-display-container w-[16.5rem] h-[12rem] flex flex-col items-center justify-center">
                         <div class="flex items-center justify-center gap-10">
                             <div class="home-team-score w-20 h-20 flex justify-center items-center text-[5rem] ">00</div>
@@ -85,11 +85,16 @@
                 
             </div>
 
+            <div class="league-end-el flex items-center justify-center max-w-[20%] h-[2rem] mx-auto -mb-4 text-[1rem] font-bold text-[#e9d8a6]">Soccer League</div>
+
             </div>
         </div>
 
         <!-- ====> football score board <==== end -->
-
+        <div class="flex flex-col gap-4">
+            <button class="start-btn w-[8rem] h-[3rem] mx-auto bg-[#2ec4b6] hover:bg-[#23817c] font-semibold rounded-lg">Start</button>
+            <button class="new-game-btn w-[8rem] h-[3rem] mx-auto bg-[#00bbf9] hover:bg-[#1f6da0] font-semibold rounded-lg">New Game</button>
+        </div>
     </div>
 </body>
 
