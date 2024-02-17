@@ -1,6 +1,7 @@
 const greetEl = document.getElementById('greetings');
 const timerEl = document.getElementById('timer');
 let timerInterval; // variable to hold the timer interval
+let gameStarted = false; // variable to track if the game has started
 
 function greet() {
     let currentHour = new Date().getHours();
@@ -58,14 +59,67 @@ function resetTimer() {
     startBtn.disabled = false; // enable start button
 }
 
+// function to enable score clicking when game starts
+function enableScoreClick() {
+    if (gameStarted) {
+        homeScoreEl.addEventListener('click', incrementHomeScore);
+        awayScoreEl.addEventListener('click', incrementAwayScore);
+    } else {
+        homeScoreEl.removeEventListener('click', incrementHomeScore);
+        awayScoreEl.removeEventListener('click', incrementAwayScore);
+    }
+}
+
 // call the updateTimer function and greet function when the window loads
 window.onload = function () {
     greet();
+    enableScoreClick();
+}
+
+
+let homeScoreEl = document.querySelector('.home-team-score');
+let awayScoreEl = document.querySelector('.away-team-score');
+
+homeScoreEl.textContent = 0;
+awayScoreEl.textContent = 0;
+
+//function to update score display with leading zeros
+function updateScoreDisplay(element, score) {
+    element.textContent = String(score).padStart(2, '0')
+}
+
+
+let homeScore = 0;
+let awayScore = 0;
+
+updateScoreDisplay(homeScoreEl, homeScore);
+updateScoreDisplay(awayScoreEl, awayScore);
+
+//function add score
+function incrementHomeScore() {
+    homeScore++
+    updateScoreDisplay(homeScoreEl, homeScore);
+}
+
+function incrementAwayScore() {
+    awayScore++
+    updateScoreDisplay(awayScoreEl, awayScore);
 }
 
 // Event listeners for buttons
 let startBtn = document.querySelector('.start-btn');
 let newGameBtn = document.querySelector('.new-game-btn');
 
-startBtn.addEventListener('click', updateTimer);
-newGameBtn.addEventListener('click', resetTimer);
+startBtn.addEventListener('click', () => {
+    gameStarted = true;
+    enableScoreClick();
+    updateTimer();
+});
+
+newGameBtn.addEventListener('click', () => {
+    homeScore = 0;
+    awayScore = 0;
+    updateScoreDisplay(homeScoreEl, homeScore);
+    updateScoreDisplay(awayScoreEl, awayScore)
+    resetTimer();
+});
